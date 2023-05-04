@@ -1,0 +1,132 @@
+.header{
+    /* background-color: red; */
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    /* max-width: 1400px; */
+}
+
+body {
+    background: black;
+}
+
+.divhead{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    background-color: #F6C270;
+}
+
+h1{
+    /* background-color: greenyellow; */
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    padding: 10px;
+}
+
+nav{
+    /* background-color: purple; */
+    /* width: 85%; */
+    display: flex;
+    justify-content: flex-end;
+    align-items:center;
+    /* flex-direction: row;
+    flex-wrap: wrap;
+    align-content: space-evenly; */
+}
+
+ul{
+    display: flex;
+    padding: 10px;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
+a{
+    text-decoration: none;
+}
+
+@media screen and (min-width: 700px){
+    .divhead{
+        flex-direction: row;
+    }
+    h1{
+        width: 25%;
+        height: 80%;
+    }
+    nav {
+        width: 65%;
+        height: 80%;
+    }
+    
+}
+
+.search{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: blanchedalmond;
+    padding: 15px;
+    border-radius: 0 0 15px 15px;
+}
+
+.div-cards{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    /* justify-content: center; */
+    width: 100%;
+    /* height: 100%; */
+    margin: 10px;
+    /* align-items: center; */
+}
+.card {
+    background: white;
+    width: 100%;
+    height: 100%;
+    margin: 10px;
+    border-radius: 15px;
+    /* align-items: center; */
+    /* justify-content: center; */
+}
+.card-image {
+    background-color: #F6C270;;
+    height: 150px;
+    /* margin-bottom: 15px; */
+    border-radius: 15px 15px 0 0;
+}
+
+.card-title, .card-text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.blogdiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.blog{
+    display: flex;
+    background: white;
+    width: 90%;
+    /* justify-content: center; */
+    /* align-items: center; */
+    height: 150px;
+    border-radius: 15px;
+    padding: 10px;
+
+}
+
+
+
