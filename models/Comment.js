@@ -1,5 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
+const User = require('./User');
+const Post = require('./Post');
 
 class Comment extends Model {}
 
@@ -11,7 +13,6 @@ Comment.init(
       primaryKey: true,
       autoIncrement: true
     },
-  
     comment_text: {
       type: DataTypes.STRING,
       allowNull: false,
