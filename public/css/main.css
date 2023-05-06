@@ -18,7 +18,7 @@ body {
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    background-color: #F6C270;
+    background-color: #feb200;
 }
 
 
@@ -107,7 +107,7 @@ a{
     /* justify-content: center; */
 }
 .card-image {
-    background-color: #F6C270;;
+    background-color: #feb200;;
     height: 150px;
     /* margin-bottom: 15px; */
     border-radius: 15px 15px 0 0;
