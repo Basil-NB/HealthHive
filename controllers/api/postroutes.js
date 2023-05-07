@@ -1,9 +1,10 @@
 const router = require('express').Router();
-const sequelize = require('./../config/connection');
+const sequelize = require('../../config/connection');
 const { Post, User, Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
-
+//http://localhost:3001/api/posts/
 router.get('/', (req, res) => {
+  console.log("post route")
   Post.findAll({
     attributes: [
       'id',
@@ -32,7 +33,7 @@ router.get('/', (req, res) => {
       res.status(500).json(err);
     });
 });
-
+//http://localhost:3001/api/posts/1
 router.get('/:id', (req, res) => {
   Post.findOne({
     where: {
@@ -71,7 +72,7 @@ router.get('/:id', (req, res) => {
       res.status(500).json(err);
     });
 });
-
+//http://localhost:3001/api/posts/
 router.post('/', withAuth, (req, res) => {
   Post.create({
     title: req.body.title,
