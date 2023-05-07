@@ -1,12 +1,12 @@
 const router = require('express').Router();
 
-const { Comment } = require('../models');
-const withAuth = require('../utils/auth');
+const { Comment } = require('../../models');
+const withAuth = require('../../utils/auth');
 
 const Filter = require('bad-words')
   filter = new Filter()
 
-
+//http://localhost:3001/api/comments/
 router.get('/', (req, res) => {
   Comment.findAll()
     .then(dbCommentData => res.json(dbCommentData))
