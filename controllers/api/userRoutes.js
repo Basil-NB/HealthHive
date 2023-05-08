@@ -19,7 +19,7 @@ router.post("/", async (req, res) => {
 //http://localhost:3001/api/users/login
 router.post("/login", async (req, res) => {
   console.log(req.body)
-  try {
+  // try {
     const userData = await User.findOne({ where: { email: req.body.email } });
 
     if (!userData) {
@@ -45,13 +45,13 @@ router.post("/login", async (req, res) => {
       res.json({ user: userData, message: "You are now logged in!" });
     });
     
-    if (req.session.logged_in) {
-      res.redirect('/main')
-      return
-    }
-  } catch (err) {
-    res.status(400).json(err);
-  }
+  //   if (req.session.logged_in) {
+  //     res.redirect('/main')
+  //     return
+  //   }
+  // } catch (err) {
+  //   res.status(400).json(err);
+  // }
 });
 
 router.post("/logout", (req, res) => {
