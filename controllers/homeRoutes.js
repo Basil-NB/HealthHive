@@ -9,10 +9,8 @@ router.get('/', withAuth, async (req, res) => {
       order: [['name', 'ASC']],
     });
 
-    const users = userData.map((project) => project.get({ plain: true }));
-
     res.render('main', {
-      users,
+      userData,
       logged_in: req.session.logged_in,
     });
   } catch (err) {
