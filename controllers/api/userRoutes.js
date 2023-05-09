@@ -1,15 +1,15 @@
 const router = require('express').Router();
-const {User,Post,Comment} = require('../../models');
+const { User, Post, Comment } = require('../../models');
 const Filter = require('bad-words')
-  filter = new Filter()
+filter = new Filter()
 
 // Get all users
 router.get('/', (req, res) => {
     User.findAll({
-            attributes: {
-                exclude: ['password']
-            }
-        })
+        attributes: {
+            exclude: ['password']
+        }
+    })
         .then(dbUserData => res.json(dbUserData))
         .catch(err => {
             console.log(err);
@@ -20,26 +20,26 @@ router.get('/', (req, res) => {
 // Get specific user
 router.get('/:id', (req, res) => {
     User.findOne({
-            attributes: {
-                exclude: ['password']
-            },
-            where: {
-                id: req.params.id
-            },
-            include: [{
-                    model: Post,
-                    attributes: ['id', 'title', 'content', 'created_at']
-                },
-                {
-                    model: Comment,
-                    attributes: ['id', 'comment_text', 'created_at'],
-                    include: {
-                        model: Post,
-                        attributes: ['title']
-                    }
-                }
-            ]
-        })
+        attributes: {
+            exclude: ['password']
+        },
+        where: {
+            id: req.params.id
+        },
+        include: [{
+            model: Post,
+            attributes: ['id', 'title', 'content']
+        },
+        {
+            model: Comment,
+            attributes: ['id', 'comment_text'],
+            include: {
+                model: Post,
+                attributes: ['title']
+            }
+        }
+        ]
+    })
         .then(dbUserData => {
             if (!dbUserData) {
                 res.status(404).json({
@@ -60,9 +60,9 @@ router.get('/:id', (req, res) => {
 // Create a user
 router.post('/', (req, res) => {
     User.create({
-            username: fiter.clean(req.body.username),
-            password: req.body.password
-        })
+        username: fiter.clean(req.body.username),
+        password: req.body.password
+    })
         .then(dbUserData => {
             req.session.save(() => {
                 req.session.user_id = dbUserData.id;
@@ -80,10 +80,10 @@ router.post('/', (req, res) => {
 
 router.post('/login', (req, res) => {
     User.findOne({
-            where: {
-                username: req.body.username
-            }
-        })
+        where: {
+            username: req.body.username
+        }
+    })
         .then(dbUserData => {
             if (!dbUserData) {
                 res.status(400).json({
