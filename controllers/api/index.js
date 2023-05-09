@@ -1,7 +1,7 @@
 const router = require("express").Router()
 const userRoutes = require("./userRoutes.js")
 const postRoutes = require("./postroutes.js")
-const blogRoutes = require("./blogRoutes.js")
+const blogRoutes = require("../blogRoutes.js")
 const commentRoutes = require("./commentRoutes.js")
 
 //http://localhost:3001/api/users
