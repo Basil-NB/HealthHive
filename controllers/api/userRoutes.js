@@ -55,6 +55,8 @@ router.get('/:id', (req, res) => {
         });
 });
 
+
+
 // Create a user
 router.post('/', (req, res) => {
     User.create({
@@ -95,6 +97,7 @@ router.post('/login', (req, res) => {
                 req.session.username = dbUserData.username;
                 req.session.loggedIn = true;
 
+
                 res.json({
                     user: dbUserData,
                     message: 'You are now logged in!'
@@ -121,6 +124,8 @@ router.post('/login', (req, res) => {
                 });
             });
         });
+
+
 });
 
 router.post('/logout', (req, res) => {
