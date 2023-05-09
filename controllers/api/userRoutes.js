@@ -60,6 +60,7 @@ router.get('/:id', (req, res) => {
 // Create a user
 router.post('/', (req, res) => {
     User.create({
+
         username: filter.clean(req.body.username),
         password: req.body.password
     })
