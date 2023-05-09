@@ -25,12 +25,11 @@
 
 <div class="blogdiv">
     <h2 class="blog">Blog:</h2>
+    <ul class="post-list">
+        {{#each posts as |post|}}
+        <li>
+            {{> post-info post }}
+        </li>
+        {{/each}}
+    </ul>
 </div>
-
-<ul class="post-list">
-    {{#each posts as |post|}}
-    <li>
-        {{> post-info post }}
-    </li>
-    {{/each}}
-</ul>
