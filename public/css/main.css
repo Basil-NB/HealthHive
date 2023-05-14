@@ -52,6 +52,7 @@ ul{
 
 
 a{
+    color:white; 
     text-decoration: none;
 }
 
@@ -121,7 +122,8 @@ a{
 }
 
 
-.blogdiv{
+.blogdiv{   
+    color:white;
     display: flex;
     justify-content: center;
     align-items: center;
