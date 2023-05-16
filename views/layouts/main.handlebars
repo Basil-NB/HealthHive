@@ -21,14 +21,18 @@
                     <li>
                         <a href="#Home">Home</a>
                     </li>
+                    {{#unless loggedIn}}
                     <li>
                         <a href="#Account">Account</a>
                     </li>
+                     {{/unless}}
+                     {{#if loggedIn}}
                     <li>
 
-                        <a href="#logout">logout</a>
-
+                        <a id="logout" href="#logout">logout</a>
+                    <script src="js/logout.js"> </script>
                     </li>
+                    {{/if}}
                     <li>
                         <a href="#contact-us">Contact Us</a>
                     </li>
