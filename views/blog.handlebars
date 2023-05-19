@@ -3,10 +3,20 @@
     <section class="container">
         <div class="card">
             <div class="card-image"></div>
-            <h2 class="card-title">Title</h2>
-            <p class="card-text">Text</p>
+            <h2 class="card-title">Blog</h2>
+        <ul class="post-list">
+
+        {{#each posts as |post|}}
+        <li>
+
+            {{> post-info post }}
+        </li>
+        {{/each}}
+    </ul>
+            <p class="card-text"></p>
+            </div>
     </section>
-    <section class="container">
+    {{!-- <section class="container">
         <div class="card">
             <div class="card-image"></div>
             <h2 class="card-title">Title</h2>
@@ -19,14 +29,19 @@
             <div class="card-image"></div>
             <h2 class="card-title">Title</h2>
             <p class="card-text">Text</p>
-    </section>
+    </section> --}}
 </div>
-<input type="text" name="post-title">
-<textarea name="post-content" cols="30" rows="10"></textarea>
-<button type="btn" id="create-new-post">post!</button>
 
-<div class="blogdiv">
-    <h2 class="blog">Blog:</h2>
+
+
+<div class="form-container">
+    <input type="text" name="post-title" class="input-field" placeholder="Title">
+    <textarea name="post-content" cols="30" rows="10" class="input-field" placeholder="Content"></textarea>
+    <button type="button" id="create-new-post" class="btn-submit">Post!</button>
+</div>
+
+{{!-- <div class="blogdiv">
+    {{!-- <h2 class="blog">Blog:</h2> --}}
     <ul class="post-list">
         {{#each posts as |post|}}
         <li>
@@ -34,5 +49,8 @@
         </li>
         {{/each}}
     </ul>
-</div>
+</div> --}}
+
+
+
 <script src="js/add-post.js"

@@ -1,21 +1,19 @@
+</section>
+<div class="div-cards">
+    <section class="container">
+        <div class="card">
+            <div class="card-image"></div>
+            <h2 class="card-title"></h2>
+        <ul class="post-list">
+
 {{> post-info post}}
 
-{{#if loggedIn}}
-<form class="comment-form">
-    <div>
-        <textarea name="comment-body"></textarea>
-    </div>
-
-    <div>
-        <button type="submit">add comment</button>
-    </div>
-</form>
-{{/if}}
-
 {{> comments post.comments}}
+    </ul>
+<br>
 
-{{#if loggedIn}}
+</div>
 
-<script src="/js/add-comment.js"></script>
+</section>
 
-{{/if}}
+
