@@ -19,23 +19,22 @@
             <nav>
                 <ul>
                     <li>
-                        <a href="#Home">Home</a>
+                        <a href="/">Home</a>
                     </li>
                     {{#unless loggedIn}}
                     <li>
-                        <a href="#Account">Account</a>
+                        <a id="Login" href="login#Home">Login</a>
                     </li>
                      {{/unless}}
+  
                      {{#if loggedIn}}
                     <li>
-
-                        <a id="logout" href="#logout">logout</a>
+                        <a id="Logout" href="login">Logout</a>
                     <script src="js/logout.js"> </script>
                     </li>
                     {{/if}}
-                    <li>
-                        <a href="#contact-us">Contact Us</a>
-                    </li>
+
+
                 </ul>
             </nav>
         </div>
