@@ -2,6 +2,9 @@ const router = require('express').Router();
 const sequelize = require('../../config/connection');
 const { Post, User, Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
+const Filter = require('bad-words')
+filter = new Filter()
+
 //http://localhost:3001/api/posts/
 router.get('/', (req, res) => {
   console.log("post route")
@@ -74,9 +77,10 @@ router.get('/:id', (req, res) => {
 });
 //http://localhost:3001/api/posts/
 router.post('/', withAuth, (req, res) => {
+  
   Post.create({
-    title: req.body.title,
-    post_content: req.body.post_content,
+    title: filter.clean(req.body.title),
+    post_content: filter.clean(req.body.post_content),
     user_id: req.session.user_id
   })
     .then(dbPostData => res.json(dbPostData))
