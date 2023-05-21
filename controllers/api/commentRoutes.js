@@ -18,8 +18,14 @@ router.get("/", (req, res) => {
 //Create a comment
 router.post('/', withAuth, (req, res) => {
   if (req.session) {
+    const commentText = req.body.comment_text
+    const filteredCommentText = filter.clean(commentText)
+    const commentWithLinks = filteredCommentText.replace(
+      /(https?:\/\/[^\s]+)/g,
+      '<a href="$&" target="_blank">$&</a>'
+    );
     Comment.create({
-      comment_text: req.body.comment_text,
+      comment_text: commentWithLinks,
       post_id: req.body.post_id,
       user_id: req.session.user_id
     })
