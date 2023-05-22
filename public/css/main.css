@@ -178,3 +178,8 @@ a{
 .btn-submit:hover {
     background-color: #45a049;
 }
+.info-section {
+    color: black;
+    border: 1px solid #feb200;
+    text-align: center;
+}
