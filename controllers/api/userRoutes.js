@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const { User } = require("../../models/index");
-const withAuth = require("../../utils/auth");
+
 
 
 //http://localhost:3001/api/users/
