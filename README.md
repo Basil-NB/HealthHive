@@ -15,7 +15,7 @@ Node.js, Javascript, HTML, CSS, SQL, and bad-words profanity filter were all use
 
 ## Live URL
 
-To view page [Click here]()
+To view page [Click here](https://healthhivemedical.herokuapp.com/)
 
 
 ## Wireframe
