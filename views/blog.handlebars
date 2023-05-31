@@ -4,32 +4,16 @@
         <div class="card">
             <div class="card-image"></div>
             <h2 class="card-title">Blog</h2>
-        <ul class="post-list">
-
-        {{#each posts as |post|}}
-        <li>
-
-            {{> post-info post }}
-        </li>
-        {{/each}}
-    </ul>
+            <ul class="post-list">
+                {{#each posts}}
+                <li>
+                    {{> post-info this}}
+                </li>
+                {{/each}}
+            </ul>
             <p class="card-text"></p>
-            </div>
+        </div>
     </section>
-    {{!-- <section class="container">
-        <div class="card">
-            <div class="card-image"></div>
-            <h2 class="card-title">Title</h2>
-            <p class="card-text">Text</p>
-    </section>
-
-
-    <section class="container">
-        <div class="card">
-            <div class="card-image"></div>
-            <h2 class="card-title">Title</h2>
-            <p class="card-text">Text</p>
-    </section> --}}
 </div>
 
 
@@ -40,17 +24,8 @@
     <button type="button" id="create-new-post" class="btn-submit">Post!</button>
 </div>
 
-{{!-- <div class="blogdiv">
-    {{!-- <h2 class="blog">Blog:</h2> --}}
-    <ul class="post-list">
-        {{#each posts as |post|}}
-        <li>
-            {{> post-info post }}
-        </li>
-        {{/each}}
-    </ul>
-</div> --}}
 
 
 
-<script src="js/add-post.js"
+
+<script src="js/add-post.js"></script>
