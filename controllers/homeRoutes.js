@@ -3,6 +3,9 @@ const { User, Post, Comment } = require('../models');
 
 
 router.get('/', (req, res) => {
+    if (!req.session.loggedIn) {
+        return res.redirect('/welcome')
+    }
     Post.findAll({
         attributes: ['id', 'title', 'post_content', 'user_id'],
         include: [{
@@ -87,7 +90,9 @@ router.get('/login', (req, res) => {
     res.render('login');
 });
 
-
+router.get('/welcome', (req, res) => {
+    res.render('welcome')
+})
 
 router.get('*', (req, res) => {
     res.status(404).send("Can't go there!");
