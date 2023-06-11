@@ -183,3 +183,22 @@ a{
     border: 1px solid #feb200;
     text-align: center;
 }
+
+h2 {
+    text-align: center;
+    text-shadow: #feb200;
+    color: black;
+    font-size: 50px;
+
+}
+p {
+    text-align: center;
+    font-size: 20px;
+    
+}
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
